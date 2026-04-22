@@ -106,7 +106,7 @@ async function calculateEWT(entry, db) { // when user checks their status in que
 const MongoClient = require('mongodb').MongoClient; 
 
 // mongodb connection link to UGproject database
-const uri = "mongodb+srv://ln439_db_user:y4X1ZHAsVV9DLKXD@ugprojectcluster.szhht3p.mongodb.net/?appName=UGprojectCluster" // had to create a new cluster due to mongoDB side connection issue - updated on April 1 2026
+const uri = "mongodb+srv://ln439_db_user:y4X1ZHAsVV9DLKXD@ugprojectcluster.szhht3p.mongodb.net/?appName=UGprojectCluster?retryWrites=true&w=majority" // had to create a new cluster due to mongoDB side connection issue - updated on April 1 2026
 
 let db;
 MongoClient.connect( 
