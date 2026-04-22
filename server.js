@@ -85,7 +85,11 @@ async function calculateEWT(entry, db) { // when user checks their status in que
             })
         });
 
+        console.log("ML status:", response.status); // added to debug ML API and backend connection issue
+
         const data = await response.json();
+        console.log("ML RESPONSE:", data); // added to debug ML API and backend connection issue
+
         updatedWaitTime = data.estimatedWaitTime;
 
     } catch (error) {
