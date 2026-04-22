@@ -836,7 +836,6 @@ app.get('/userQueues/:userId', async (req, res) => {
     const { ObjectId } = require('mongodb');
     //const userId = new ObjectId(req.params.userId);
 
-    const { ObjectId } = require('mongodb');
     let userId;
     try {
         userId = new ObjectId(req.params.userId);
