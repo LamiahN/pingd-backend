@@ -834,7 +834,16 @@ app.get('/getQueueEntry/:userId', async (req, res) => {
 app.get('/userQueues/:userId', async (req, res) => {
 
     const { ObjectId } = require('mongodb');
-    const userId = new ObjectId(req.params.userId);
+    //const userId = new ObjectId(req.params.userId);
+
+    const { ObjectId } = require('mongodb');
+    let userId;
+    try {
+        userId = new ObjectId(req.params.userId);
+    } catch (e) {
+        console.error("Invalid userId:", req.params.userId);
+        return res.json([]);  // return empty instead of crashing
+    }
 
     try {
         const entries = await db.collection('QueueEntry')
