@@ -52,13 +52,13 @@ async function calculateEWT(entry, db) { // when user checks their status in que
 
     // get queue
     const queue = await db.collection('Queue').findOne({
-        _id: new ObjectId(entry.queueId)
+        _id: new ObjectId(entry.queueId) 
     });
 
     let queueType = queue?.queueType || "dine-in";
 
     // avg service time
-    let avgServiceTime;
+    let avgServiceTime; 
 
     if (queueType === "dine-in") {
         if (entry.partySize <= 2) avgServiceTime = 20;
@@ -69,7 +69,7 @@ async function calculateEWT(entry, db) { // when user checks their status in que
     }
 
     // ML call
-    let updatedWaitTime = 0;
+    let updatedWaitTime = 0; 
 
     try {
         const response = await fetch("https://pingd-ml-api.onrender.com/predict", {
