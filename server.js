@@ -549,10 +549,9 @@ app.post('/addToQueue', async (req, res) => {
 
     // create queue entry
     const newEntry = {
-        queueId: new ObjectId(queueId), // fix to convert string ID to ObjectId type for MongoDB
+        queueId: new ObjectId(queueId), 
         userId: user._id,
         partySize: partySize || null,
-        // orderNo: orderNo || null, // field for future use (take-out orders)
         joinedAt: new Date(),
         position: count + 1,
         status: "waiting",
